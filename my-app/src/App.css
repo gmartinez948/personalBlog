@@ -1,16 +1,39 @@
-.App {
-  text-align: center;
-}
+/* .App {
+  background: url("/public/bronx.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.5;
+} */
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+}
+.Header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  margin: -90px 0 0 -300px;
+  background-color: blue;
+  border-radius: 15px;
+  box-shadow: inset 0px 0px 20px 0px white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Name-Text {
+  padding: 15px 0px 0px 20px;
+  color: red;
+  font-family: slab serif, sans-serif;
+  font-size: 40px;
+  text-align: center;
+  /* letter-spacing: 3px; */
+  line-height: 50px;
+  white-space: normal;
 }
 
 .App-header {
@@ -35,4 +58,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: red;
+  transform-origin: 0%;
 }
