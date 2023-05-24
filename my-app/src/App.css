@@ -23,6 +23,7 @@
   background-color: blue;
   border-radius: 15px;
   box-shadow: inset 0px 0px 20px 0px white;
+  overflow-y: auto;
 }
 
 .Name-Text {
@@ -31,9 +32,22 @@
   font-family: slab serif, sans-serif;
   font-size: 40px;
   text-align: center;
-  /* letter-spacing: 3px; */
   line-height: 50px;
   white-space: normal;
+}
+
+.AboutMe {
+  width: 30%;
+  float: right;
+  overflow-y: auto;
+  margin-top: 100px;
+  margin-right: 200px;
+}
+
+.Personal-project {
+  margin-top: 400px;
+  display: flex;
+  clear: both;
 }
 
 .App-header {

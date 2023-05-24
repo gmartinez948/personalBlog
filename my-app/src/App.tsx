@@ -1,16 +1,18 @@
 import NameHeader from "./NameHeader";
 import "./App.css";
-import { motion, useScroll } from "framer-motion";
+import { DownCircleOutlined } from "@ant-design/icons";
+import AboutMe from "./components/AboutMe";
+import PersonalProjectGrid, {
+  PersonalProjectDataProps,
+} from "./components/PersonalProjects";
 
 function App() {
-  const { scrollYProgress } = useScroll();
-
   return (
-    <motion.div className="progress-bar" style={{ scaleX: scrollYProgress }}>
-      <div>
-        <NameHeader />
-      </div>
-    </motion.div>
+    <div>
+      <NameHeader />
+      <AboutMe />
+      <PersonalProjectGrid />
+    </div>
   );
 }
 
