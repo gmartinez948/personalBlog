@@ -1,33 +1,17 @@
-/* .App {
-  background: url("/public/bronx.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  opacity: 0.5;
-} */
-
-.App-logo {
-}
 .Header {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 600px;
-  margin: -90px 0 0 -300px;
-  background-color: blue;
-  border-radius: 15px;
-  box-shadow: inset 0px 0px 20px 0px white;
-  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 8%;
+  background: #080008;
+  position: relative;
+  overflow: hidden;
 }
 
 .Name-Text {
-  padding: 15px 0px 0px 20px;
+  padding: 300px 0px 300px 20px;
   color: red;
   font-family: slab serif, sans-serif;
   font-size: 40px;
@@ -37,17 +21,31 @@
 }
 
 .AboutMe {
-  width: 30%;
-  float: right;
-  overflow-y: auto;
-  margin-top: 100px;
-  margin-right: 200px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-around;
+  padding-right: 200px;
+  margin-left: 200px;
+  margin-top: 200px;
+}
+
+.aboutMeText {
+  font-family: "Times New Roman", Times, serif;
+  align-self: auto;
+  margin-left: 500px;
+  margin-right: 100px;
+  height: 50%;
 }
 
 .Personal-project {
-  margin-top: 400px;
   display: flex;
-  clear: both;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 200px;
+  display: flex;
+  margin-bottom: 200px;
+  /* height: 100vh; */
 }
 
 .App-header {
@@ -63,23 +61,4 @@
 
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.progress-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 20px;
-  background: red;
-  transform-origin: 0%;
 }

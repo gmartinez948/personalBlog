@@ -1,4 +1,5 @@
 import NameHeader from "./NameHeader";
+import ContactMe from "./components/ContactMe";
 import "./App.css";
 import { DownCircleOutlined } from "@ant-design/icons";
 import AboutMe from "./components/AboutMe";
@@ -12,6 +13,7 @@ function App() {
       <NameHeader />
       <AboutMe />
       <PersonalProjectGrid />
+      <ContactMe />
     </div>
   );
 }

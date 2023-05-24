@@ -1,7 +1,6 @@
-import { MouseEventHandler } from "react";
-import { Avatar, Card, Col, Row } from "antd";
+import { useRef } from "react";
+import { Avatar, Card, Col } from "antd";
 import "../App.css";
-import TurkeyPhoto from "./earthquake-turkey-syria-main-teaser.jpg";
 const { Meta } = Card;
 
 export interface PersonalProjectDataProps {
@@ -40,11 +39,14 @@ const PersonalProjectGrid = () => {
   };
 
   return (
-    <Row className="Personal-project" gutter={16}>
+    <div className="Personal-project">
       {personalProjects.map((project: PersonalProjectDataProps) => (
-        <Col span={8}>
+        <Col span={5}>
           <Card
-            cover={<img alt="example" src={project.photo} />}
+            style={{ width: 400, height: 300 }}
+            cover={
+              <img alt="example" src={project.photo} style={{ height: 300 }} />
+            }
             title={project.title}
             bordered={true}
             hoverable={true}
@@ -54,7 +56,7 @@ const PersonalProjectGrid = () => {
           </Card>
         </Col>
       ))}
-    </Row>
+    </div>
   );
 };
 
