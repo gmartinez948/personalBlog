@@ -3,9 +3,8 @@
 * {
   box-sizing: border-box;
 }
-
 .App {
-  background-color: black;
+  background: rgba(240, 227, 227, 0.5);
 }
 
 .Header-img {
@@ -61,7 +60,7 @@
   flex: 50%;
   font-family: "Optima", Times, serif;
   line-height: 200%;
-  color: WHITE;
+  color: black;
   padding: 0% 10% 0px 20%;
 }
 
@@ -72,7 +71,7 @@
   justify-content: center;
   margin-top: 0;
   display: flex;
-  margin-bottom: 20%;
+  margin-bottom: 10%;
   width: 100%;
 }
 
@@ -97,4 +96,55 @@
 
 .App-link {
   color: #61dafb;
+}
+
+input {
+  padding: 10px;
+  margin: 2% 2% 2% 10%;
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+.input.button {
+  all: unset;
+  padding: 7% 0 7% 0;
+  font-size: medium;
+  font-weight: 50;
+}
+
+label {
+  padding: 3% 50% 0% 10%;
+  color: rgb(104, 195, 163);
+}
+
+textarea {
+  padding: 10px;
+  margin: 2% 2% 2% 10%;
+  border: 0;
+  height: 150px;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+}
+
+h1 {
+  text-align: center;
+  color: white;
+}
+
+.Form-Container {
+  border-top: seagreen;
+  border-width: medium;
+  display: flex;
+  flex-direction: column;
+  /* background-color: #f2f2f2; */
+  /* padding */
+  text-align: left;
+  height: 100%;
+  padding: 7% 25% 10% 25%;
+}
+
+.Button {
+  border-radius: 10%;
+  margin-left: 75%;
+  background-color: rgb(104, 195, 163);
+  font-size: 18;
 }
