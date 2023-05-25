@@ -3,8 +3,13 @@ import "../App.css";
 const AboutMe = () => {
   return (
     <div className="AboutMe">
-      <img alt="aboutme" src="./me.jpg" style={{ height: 600 }} />
-      <p className="aboutMeText">
+      <img
+        className="AboutMe-img"
+        alt="about me img"
+        src="./me.jpg"
+        style={{ height: 600 }}
+      />
+      <div className="aboutMeText">
         I am a full stack software engineer with one year of experience working
         with Ruby on Rails, Typescript/Javascript, React, and GraphQL. During my
         time at Gusto, I worked on new product features that helped customers
@@ -19,7 +24,7 @@ const AboutMe = () => {
         because I believe that is the best way to learn - from each other.
         Currently, I am searching for a new opportunity. Please reach out to me
         if you have any connections or are looking to hire for an L1 engineer.
-      </p>
+      </div>
     </div>
   );
 };
