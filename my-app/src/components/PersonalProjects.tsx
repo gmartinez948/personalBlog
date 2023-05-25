@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { easeOut, motion, AnimatePresence } from "framer-motion";
 import { Avatar, Card, Col, Row } from "antd";
 import "../App.css";
 const { Meta } = Card;
@@ -33,13 +34,30 @@ const personalProjects: ReadonlyArray<PersonalProjectDataProps> = [
   },
 ];
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      ease: "easeOut",
+      y: 0,
+      duration: 1,
+    },
+  },
+};
+
 const PersonalProjectGrid = () => {
   const handleGitHubClick = (github: string) => {
     window.open(github);
   };
 
   return (
-    <div className="Personal-project">
+    <motion.div
+      className="Personal-project"
+      variants={container}
+      initial="hidden"
+      whileInView="show"
+    >
       <Row gutter={[30, 20]}>
         {personalProjects.map((project: PersonalProjectDataProps) => (
           <Col xs={20} sm={16} md={10} xl={8} span={6}>
@@ -53,7 +71,6 @@ const PersonalProjectGrid = () => {
                 />
               }
               title={project.title}
-              bordered={true}
               hoverable={true}
               style={{ backgroundColor: "rgb(104, 195, 163)" }}
               onClick={() => handleGitHubClick(project.gitHub)}
@@ -63,7 +80,7 @@ const PersonalProjectGrid = () => {
           </Col>
         ))}
       </Row>
-    </div>
+    </motion.div>
   );
 };
 
