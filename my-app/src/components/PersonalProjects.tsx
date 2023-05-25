@@ -28,7 +28,7 @@ const personalProjects: ReadonlyArray<PersonalProjectDataProps> = [
     title: "Organ Project",
     photo: "./organs.jpeg",
     summary:
-      "an attempt to explore, inform and educate the American public on the disparity of minority organ donorship in the United States",
+      "An attempt to explore, inform and educate the American public on the disparity of minority organ donorship in the United States",
     gitHub: "https://github.com/gmartinez948/OrganProject",
   },
 ];
@@ -55,6 +55,7 @@ const PersonalProjectGrid = () => {
               title={project.title}
               bordered={true}
               hoverable={true}
+              style={{ backgroundColor: "rgb(104, 195, 163)" }}
               onClick={() => handleGitHubClick(project.gitHub)}
             >
               {project.summary}
