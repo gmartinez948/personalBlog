@@ -14,10 +14,6 @@ export const ContactMe = () => {
   const sendEmail: React.FormEventHandler<HTMLFormElement> = (
     e: React.FormEvent<HTMLFormElement>
   ) => {
-    console.log("before action");
-    console.log(typeof TEMPLATE_ID);
-    console.log(form.current);
-
     e.preventDefault();
     if (form.current && SERVICE_ID && TEMPLATE_ID && PUBLIC_KEY) {
       emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY).then(
