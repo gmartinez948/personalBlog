@@ -60,8 +60,8 @@
 .aboutMeText {
   flex: 50%;
   font-family: "Optima", Times, serif;
-  line-height: 120%;
-  color: red;
+  line-height: 200%;
+  color: WHITE;
   padding: 0% 10% 0px 20%;
 }
 

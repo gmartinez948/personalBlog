@@ -1,5 +1,5 @@
 import "../App.css";
-
+import { motion } from "framer-motion";
 const AboutMe = () => {
   return (
     <div className="AboutMe">
@@ -25,6 +25,13 @@ const AboutMe = () => {
         Currently, I am searching for a new opportunity. Please reach out to me
         if you have any connections or are looking to hire for an L1 engineer.
       </div>
+      <motion.div>
+        <img alt="react" src="./react-logo.svg" style={{ height: 40 }} />
+        <img alt="typescript" src="./typescript.svg" style={{ height: 40 }} />
+        <img alt="node" src="./nodelogo.svg" style={{ height: 40 }} />
+        <img alt="ruby" src="./rubylogo.svg" style={{ height: 40 }} />
+        <img alt="python" src="./python-icon.svg" style={{ height: 40 }} />
+      </motion.div>
     </div>
   );
 };

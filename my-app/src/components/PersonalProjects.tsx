@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { easeOut, motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Avatar, Card, Col, Row } from "antd";
 import "../App.css";
 const { Meta } = Card;
