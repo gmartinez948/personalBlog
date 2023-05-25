@@ -9,7 +9,7 @@ const hiText = {
   hidden: { opacity: 0, x: 400 },
   showHi: {
     opacity: 1,
-    x: 20,
+    x: 0,
     transition: {
       duration: 2,
       scale: 5,
@@ -22,7 +22,7 @@ const nameText = {
   hidden: { opacity: 0, y: -300 },
   showName: {
     opacity: 1,
-    y: -125,
+    y: 0,
     transition: {
       delay: 1,
       duration: 3,
@@ -35,7 +35,7 @@ const engineerText = {
   hidden: { opacity: 0, scale: 1, y: 300 },
   showEngineerText: {
     opacity: 1,
-    y: -160,
+    y: 0,
     transition: {
       delay: 2,
       duration: 2,
@@ -54,7 +54,12 @@ const NameHeader = () => {
     >
       <motion.div className="Header">
         <div>
-          <motion.div variants={hiText} initial="hidden" animate="showHi">
+          <motion.div
+            className="Hi-Text"
+            variants={hiText}
+            initial="hidden"
+            animate="showHi"
+          >
             Hi!
           </motion.div>
           <motion.div
@@ -66,6 +71,7 @@ const NameHeader = () => {
             I'm Guillermo Martinez
           </motion.div>
           <motion.div
+            className="Engineer-Text"
             variants={engineerText}
             initial="hidden"
             animate="showEngineerText"
