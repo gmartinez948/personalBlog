@@ -79,6 +79,11 @@ const NameHeader = () => {
             Full Stack Software Engineer
           </motion.div>
         </div>
+        {/* <div className="Linked-In-Button">
+          <button>
+            <img alt="linkedIn" src="./linkedin.svg" height={80} width={80} />
+          </button>
+        </div> */}
       </motion.div>
     </motion.div>
   );

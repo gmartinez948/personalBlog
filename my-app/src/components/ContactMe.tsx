@@ -1,8 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { Button, Radio, Space, Divider } from "antd";
 import "../App.css";
+import { Alert } from "antd";
 
 const SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
 const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID;
@@ -10,6 +11,7 @@ const PUBLIC_KEY = process.env.REACT_APP_PUBLIC_KEY;
 
 export const ContactMe = () => {
   const form = useRef<HTMLFormElement>(null);
+  const [emailAlert, setEmailAlert] = useState(false);
 
   const sendEmail: React.FormEventHandler<HTMLFormElement> = (
     e: React.FormEvent<HTMLFormElement>
@@ -18,7 +20,7 @@ export const ContactMe = () => {
     if (form.current && SERVICE_ID && TEMPLATE_ID && PUBLIC_KEY) {
       emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY).then(
         (result: any) => {
-          console.log(result.text);
+          setEmailAlert(true);
         },
         (error: any) => {
           console.log(error.text);
@@ -46,6 +48,13 @@ export const ContactMe = () => {
         >
           <input className="input button" type="submit" value="Send" />
         </motion.button>
+        {emailAlert && (
+          <Alert
+            style={{ paddingRight: "10%" }}
+            message="Thank you for your message!"
+            type="success"
+          />
+        )}
       </form>
     </div>
   );
