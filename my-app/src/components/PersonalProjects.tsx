@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Avatar, Card, Col } from "antd";
+import { Avatar, Card, Col, Row } from "antd";
 import "../App.css";
 const { Meta } = Card;
 
@@ -40,22 +40,28 @@ const PersonalProjectGrid = () => {
 
   return (
     <div className="Personal-project">
-      {personalProjects.map((project: PersonalProjectDataProps) => (
-        <Col span={5}>
-          <Card
-            style={{ width: 400, height: 300 }}
-            cover={
-              <img alt="example" src={project.photo} style={{ height: 300 }} />
-            }
-            title={project.title}
-            bordered={true}
-            hoverable={true}
-            onClick={() => handleGitHubClick(project.gitHub)}
-          >
-            {project.summary}
-          </Card>
-        </Col>
-      ))}
+      <Row gutter={[30, 20]}>
+        {personalProjects.map((project: PersonalProjectDataProps) => (
+          <Col xs={20} sm={16} md={10} xl={8} span={6}>
+            <Card
+              className="Personal-project-item"
+              cover={
+                <img
+                  alt="example"
+                  src={project.photo}
+                  style={{ height: 300 }}
+                />
+              }
+              title={project.title}
+              bordered={true}
+              hoverable={true}
+              onClick={() => handleGitHubClick(project.gitHub)}
+            >
+              {project.summary}
+            </Card>
+          </Col>
+        ))}
+      </Row>
     </div>
   );
 };
