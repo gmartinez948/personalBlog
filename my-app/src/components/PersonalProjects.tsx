@@ -60,7 +60,7 @@ const PersonalProjectGrid = () => {
         initial="hidden"
         whileInView="show"
       >
-        <Row gutter={[30, 20]}>
+        <Row gutter={[140, 20]}>
           {personalProjects.map((project: PersonalProjectDataProps) => (
             <Col xs={20} sm={16} md={10} xl={8} span={6}>
               <Card
