@@ -1,23 +1,40 @@
+@import url("https://fonts.googleapis.com/css?family=Teko");
+
+/* .App {
+  background-color: black;
+} */
+
+.Header-img {
+  position: relative;
+  background-image: url(/public/nyc.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  backdrop-filter: blur(10px);
+}
+
 .Header {
+  position: absolute;
+  background: rgba(240, 227, 227, 0.5);
   display: flex;
+  flex-direction: row;
   justify-content: center;
   height: 100vh;
   width: 100%;
   box-sizing: border-box;
   padding: 0 8%;
-  background: #080008;
   position: relative;
   overflow: hidden;
+  padding: 250px 0px 300px 20px;
+  letter-spacing: 2px;
+  font-size: 6vw;
+  font-weight: bold;
+  color: rgba(27, 27, 27, 27);
+  font-family: "Teko", sans-serif;
 }
 
 .Name-Text {
-  padding: 300px 0px 300px 20px;
-  color: red;
-  font-family: slab serif, sans-serif;
-  font-size: 40px;
-  text-align: center;
-  line-height: 50px;
-  white-space: normal;
+  padding-left: 120px;
 }
 
 .AboutMe {
