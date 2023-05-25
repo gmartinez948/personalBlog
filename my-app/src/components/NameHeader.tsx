@@ -11,7 +11,7 @@ const hiText = {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 2,
+      duration: 1,
       scale: 5,
       ease: "easeIn",
     },
@@ -25,7 +25,7 @@ const nameText = {
     y: 0,
     transition: {
       delay: 1,
-      duration: 3,
+      duration: 1,
       ease: "easeOut",
     },
   },
@@ -38,7 +38,7 @@ const engineerText = {
     y: 0,
     transition: {
       delay: 2,
-      duration: 2,
+      duration: 1,
       ease: "easeOut",
     },
   },
