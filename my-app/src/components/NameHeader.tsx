@@ -1,91 +1,65 @@
 import { easeIn, motion } from "framer-motion";
 
-const headerContainer = {
+const sentence = {
+  hidden: { opacity: 1 },
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: 0.5,
+      staggerChildren: 0.08,
+    },
+  },
+};
+
+const letter = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const button = {
   hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { staggerChildren: 0.5, duration: 2 } },
-};
-
-const hiText = {
-  hidden: { opacity: 0, x: 400 },
-  showHi: {
+  visible: {
     opacity: 1,
-    x: 0,
     transition: {
-      duration: 1,
-      scale: 5,
-      ease: "easeIn",
-    },
-  },
-};
-
-const nameText = {
-  hidden: { opacity: 0, y: -300 },
-  showName: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 1,
-      duration: 1,
-      ease: "easeOut",
-    },
-  },
-};
-
-const engineerText = {
-  hidden: { opacity: 0, scale: 1, y: 300 },
-  showEngineerText: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 2,
-      duration: 1,
-      ease: "easeOut",
+      delay: 4.5,
     },
   },
 };
 
 const NameHeader = () => {
   return (
-    <motion.div
-      className="Header-img"
-      variants={headerContainer}
-      initial="hidden"
-      animate="show"
-    >
-      <motion.div className="Header">
-        <div>
-          <motion.div
-            className="Hi-Text"
-            variants={hiText}
-            initial="hidden"
-            animate="showHi"
-          >
-            Hi!
-          </motion.div>
-          <motion.div
-            className="Name-Text"
-            variants={nameText}
-            initial="hidden"
-            animate="showName"
-          >
-            I'm Guillermo Martinez
-          </motion.div>
-          <motion.div
-            className="Engineer-Text"
-            variants={engineerText}
-            initial="hidden"
-            animate="showEngineerText"
-          >
-            Full Stack Software Engineer
-          </motion.div>
-        </div>
-        {/* <div className="Linked-In-Button">
-          <button>
-            <img alt="linkedIn" src="./linkedin.svg" height={80} width={80} />
-          </button>
-        </div> */}
-      </motion.div>
-    </motion.div>
+    <div className="Header-with-img">
+      <motion.h3
+        className="intro-text"
+        variants={sentence}
+        initial="hidden"
+        animate="visible"
+      >
+        {"Hi! I'm Guillermo Martinez".split("").map((char, index) => {
+          return (
+            <motion.span key={char + "-" + index} variants={letter}>
+              {char}
+            </motion.span>
+          );
+        })}
+        <br />
+        {"Full Stack Software Engineer".split("").map((char, index) => {
+          return (
+            <motion.span key={char + "-" + index} variants={letter}>
+              {char}
+            </motion.span>
+          );
+        })}
+        <motion.button
+          className="contact-me"
+          variants={button}
+          initial="hidden"
+          animate="visible"
+        >
+          Contact Me
+        </motion.button>
+      </motion.h3>
+    </div>
   );
 };
 

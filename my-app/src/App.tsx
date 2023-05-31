@@ -11,9 +11,9 @@ function App() {
   return (
     <div className="App">
       <NameHeader />
-      <AboutMe />
+      {/* <AboutMe />
       <PersonalProjectGrid />
-      <ContactMe />
+      <ContactMe /> */}
     </div>
   );
 }
