@@ -50,6 +50,7 @@ const NameHeader = () => {
             </motion.span>
           );
         })}
+        <br />
         <motion.button
           className="contact-me"
           variants={button}

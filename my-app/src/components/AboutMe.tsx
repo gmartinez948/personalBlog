@@ -37,18 +37,18 @@ const AboutMe = () => {
       </p>
       <div
         ref={ref}
-        className="Language-img"
+        className="Language-grid"
         style={{
           transform: isInView ? "none" : "translateX(300px)",
           opacity: isInView ? 1 : 0,
           transition: "all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
         }}
       >
-        <img alt="react" src="./react-logo.svg" style={{ height: 40 }} />
-        <img alt="typescript" src="./typescript.svg" style={{ height: 40 }} />
-        <img alt="node" src="./nodelogo.svg" style={{ height: 40 }} />
-        <img alt="ruby" src="./rubylogo.svg" style={{ height: 40 }} />
-        <img alt="python" src="./python-icon.svg" style={{ height: 40 }} />
+        <img className="language" alt="react" src="./react-logo.svg" />
+        <img className="language" alt="typescript" src="./typescript.svg" />
+        <img className="language" alt="node" src="./nodelogo.svg" />
+        <img className="language" alt="ruby" src="./rubylogo.svg" />
+        <img className="language" alt="python" src="./python-icon.svg" />
       </div>
     </div>
   );
