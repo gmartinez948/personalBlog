@@ -30,9 +30,9 @@ export const ContactMe = () => {
   };
 
   return (
-    <div style={{ backgroundColor: "rgb(27, 27, 27, 27)" }}>
-      <form className="Form-Container" ref={form} onSubmit={sendEmail}>
-        <h1>Send Me a Message</h1>
+    <div className="formContainer">
+      <form ref={form} onSubmit={sendEmail}>
+        <h2 className="Send-Message">Send Me a Message</h2>
         <label>Name</label>
         <input type="text" name="user_name" />
         <label>Email</label>
@@ -40,13 +40,13 @@ export const ContactMe = () => {
         <label>Message</label>
         <textarea name="message" />
         <motion.button
-          className="Button"
+          className="Send-Button"
           whileHover={{
             scale: 1.1,
             transition: { duration: 0.5 },
           }}
         >
-          <input className="input button" type="submit" value="Send" />
+          <input type="submit" value="Send" />
         </motion.button>
         {emailAlert && (
           <Alert

@@ -14,7 +14,7 @@ const container = {
 };
 const AboutMe = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: false });
   return (
     <div className="AboutMe">
       <img className="AboutMe-img" alt="about me img" src="./me.jpg" />

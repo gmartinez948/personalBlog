@@ -12,8 +12,8 @@ function App() {
     <div className="App">
       <NameHeader />
       <AboutMe />
-      {/* <PersonalProjectGrid />
-      <ContactMe />  */}
+      <PersonalProjectGrid />
+      <ContactMe />
     </div>
   );
 }

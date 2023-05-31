@@ -53,35 +53,27 @@ const PersonalProjectGrid = () => {
 
   return (
     <>
-      <h1 className="h1-Personal-Projects">Personal Projects</h1>
+      <h1 className="Personal-Projects">Personal Projects</h1>
       <motion.div
         className="Personal-project"
         variants={container}
         initial="hidden"
         whileInView="show"
       >
-        <Row gutter={[80, 20]}>
-          {personalProjects.map((project: PersonalProjectDataProps) => (
-            <Col xs={20} sm={16} md={10} xl={8} span={6}>
-              <Card
-                className="Personal-project-item"
-                cover={
-                  <img
-                    alt="example"
-                    src={project.photo}
-                    style={{ height: 300 }}
-                  />
-                }
-                title={project.title}
-                hoverable={true}
-                style={{ backgroundColor: "rgb(104, 195, 163)" }}
-                onClick={() => handleGitHubClick(project.gitHub)}
-              >
-                {project.summary}
-              </Card>
-            </Col>
-          ))}
-        </Row>
+        {personalProjects.map((project: PersonalProjectDataProps) => (
+          <Col xs={20} sm={16} md={10} xl={8} span={6}>
+            <Card
+              className="Personal-project-item"
+              cover={<img alt="example" src={project.photo} />}
+              title={project.title}
+              hoverable={true}
+              style={{ backgroundColor: "rgb(104, 195, 163)" }}
+              onClick={() => handleGitHubClick(project.gitHub)}
+            >
+              {project.summary}
+            </Card>
+          </Col>
+        ))}
       </motion.div>
     </>
   );
