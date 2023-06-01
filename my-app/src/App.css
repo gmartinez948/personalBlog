@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Teko");
 
-@media (min-width: 501px) {
+@media (min-width: 480px) {
   * {
     box-sizing: border-box;
     width: max(90%, 1000px);
@@ -89,10 +89,14 @@ button.contact-me {
   max-height: 20%;
   max-width: 50%;
   padding: 2% 2% 2% 2%;
-  border-radius: 10%;
+  border-radius: 45px;
   color: white;
   font-size: 1rem;
   background-color: black;
+  box-shadow: 0px 8px 15px white;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
 }
 
 .Header-with-img {

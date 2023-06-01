@@ -39,17 +39,9 @@ export const ContactMe = ({ ref }: any) => {
         <input type="email" name="user_email" />
         <label>Message</label>
         <textarea name="message" />
-        <motion.button
-          className="Send-Button"
-          type="submit"
-          value="Send"
-          whileHover={{
-            scale: 1.2,
-            transition: { duration: 1 },
-          }}
-        >
+        <button className="Send-Button" type="submit" value="Send">
           Send
-        </motion.button>
+        </button>
         {emailAlert && (
           <Alert
             style={{ paddingRight: "10%" }}

@@ -16,23 +16,11 @@ const letter = {
   visible: { opacity: 1, y: 0 },
 };
 
-const button = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      delay: 4.5,
-    },
-  },
-};
-
 const NameHeader = () => {
   const scrollToBottom = () => {
     window.scrollTo({
       top: document.documentElement.scrollHeight,
       behavior: "auto",
-      /* you can also use 'auto' behaviour
-         in place of 'smooth' */
     });
   };
 
@@ -60,19 +48,9 @@ const NameHeader = () => {
           );
         })}
         <br />
-        <motion.button
-          className="contact-me"
-          variants={button}
-          initial="hidden"
-          animate="visible"
-          whileHover={{
-            scale: 1.2,
-            transition: { delay: 4, duration: 1 },
-          }}
-          onClick={() => scrollToBottom()}
-        >
+        <button className="contact-me" onClick={() => scrollToBottom()}>
           Contact Me
-        </motion.button>
+        </button>
       </motion.h3>
     </div>
   );
