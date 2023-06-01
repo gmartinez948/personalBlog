@@ -16,6 +16,11 @@ const letter = {
   visible: { opacity: 1, y: 0 },
 };
 
+const button = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { delay: 4.5, duration: 1 } },
+};
+
 const NameHeader = () => {
   const scrollToBottom = () => {
     window.scrollTo({
@@ -48,9 +53,19 @@ const NameHeader = () => {
           );
         })}
         <br />
-        <button className="contact-me" onClick={() => scrollToBottom()}>
+        <motion.button
+          className="contact-me"
+          variants={button}
+          initial="hidden"
+          animate="visible"
+          onClick={() => scrollToBottom()}
+          whileHover={{
+            scale: 1.2,
+            transition: { duration: 1 },
+          }}
+        >
           Contact Me
-        </button>
+        </motion.button>
       </motion.h3>
     </div>
   );

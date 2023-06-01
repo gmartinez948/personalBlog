@@ -9,14 +9,12 @@ import PersonalProjectGrid, {
 import { useRef } from "react";
 
 function App() {
-  const contactMeRef = useRef<null | HTMLDivElement>(null);
-
   return (
     <div className="App">
       <NameHeader />
       <AboutMe />
       <PersonalProjectGrid />
-      <ContactMe ref={contactMeRef} />
+      <ContactMe />
     </div>
   );
 }

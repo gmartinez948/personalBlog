@@ -9,7 +9,12 @@ const SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
 const TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID;
 const PUBLIC_KEY = process.env.REACT_APP_PUBLIC_KEY;
 
-export const ContactMe = ({ ref }: any) => {
+const button = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { delay: 4.5, duration: 1 } },
+};
+
+export const ContactMe = () => {
   const form = useRef<HTMLFormElement>(null);
   const [emailAlert, setEmailAlert] = useState(false);
 
@@ -39,9 +44,20 @@ export const ContactMe = ({ ref }: any) => {
         <input type="email" name="user_email" />
         <label>Message</label>
         <textarea name="message" />
-        <button className="Send-Button" type="submit" value="Send">
-          Send
-        </button>
+        <motion.button
+          className="Send-Button"
+          type="submit"
+          value="Send"
+          variants={button}
+          initial="hidden"
+          animate="visible"
+          whileHover={{
+            scale: 1.2,
+            transition: { duration: 1 },
+          }}
+        >
+          {!emailAlert ? "Send" : "Sent"}
+        </motion.button>
         {emailAlert && (
           <Alert
             style={{ paddingRight: "10%" }}

@@ -48,8 +48,10 @@ h1.AboutMe {
 h1.Personal-Projects {
   @media (min-width: 1120px) {
     font-size: 2.5rem;
-    padding: 15% 0 10% 0;
+    padding: 10% 0 10% 0;
   }
+  border-top: 8px solid black;
+  border-collapse: collapse;
   text-align: center;
   padding: 10% 0 10% 0;
 }
@@ -64,7 +66,7 @@ p.AboutMe {
     height: 100%;
   }
   max-width: 75%;
-  padding: 0 0 0 0;
+  padding: 0 0 0% 0;
 }
 
 button.contact-me {
@@ -103,7 +105,7 @@ button.contact-me {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10% 0 0 0;
+  padding: 5% 0 15% 0;
   max-height: 100%;
 }
 
@@ -136,13 +138,17 @@ img.language {
 }
 
 .Personal-Project-Container {
+  border: 3px solid red;
   padding: 0 0 10% 0;
 }
 
 .Personal-project-item {
+  @media (min-width: 1120px) {
+    max-height: 200%;
+  }
   max-height: 100%;
   max-width: 75%;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 .formContainer {
@@ -179,8 +185,14 @@ h2.Send-Message {
 }
 
 button.Send-Button {
+  margin-top: 15px;
+  margin-bottom: 15px;
   max-width: 30%;
-  padding: 3% 3% 3% 3%;
+  padding: 3% 5% 3% 5%;
   align-self: flex-end;
   background-color: rgb(189, 195, 199);
+  border-radius: 30px;
+  box-shadow: 0px 8px 15px grey;
+  cursor: pointer;
+  outline: none;
 }
