@@ -20,12 +20,14 @@ const letter = {
 
 const button = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { delay: 4.5, duration: 0.5 } },
+  visible: {
+    opacity: 1,
+    transition: { delay: 4.5, duration: 0.5, type: "spring", stiffness: 20 },
+  },
 };
 
 const buttonHover = {
   scale: 1.2,
-  // transition: { duration: 1 },
 };
 
 const NameHeader = () => {

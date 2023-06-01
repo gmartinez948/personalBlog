@@ -90,6 +90,80 @@ button.contact-me {
   column-gap: 10%;
 }
 
+.Personal-Project-Container {
+  box-sizing: content-box;
+  height: 80vh;
+  scroll-snap-type: y mandatory;
+  overflow: scroll;
+  scroll-margin-inline-end: 0;
+}
+
+/* .Personal-Project-Container::-webkit-scrollbar {
+  height: 0;
+  width: 10px;
+  margin: 20% 0 0% 0;
+  background: green;
+} */
+
+img.personalProject {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+button.GitHub {
+  padding: 2% 2% 2% 2%;
+  margin-left: 10%;
+  border-radius: 15%;
+  background-color: red;
+  box-shadow: 0px 5px 20px grey;
+  cursor: pointer;
+  outline: none;
+}
+
+h2.PersonalProject {
+  margin: 60% 0 0% 0;
+  color: var(--accent);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -3px;
+  line-height: 1.2;
+  position: absolute;
+}
+
+section.PersonalProject {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  scroll-snap-align: end;
+  perspective: 500px;
+  scroll-snap-type: y mandatory;
+}
+
+section.PersonalProject > div {
+  width: 50%;
+  height: 50%;
+  position: relative;
+  max-height: 90vh;
+  margin: 20px;
+  background: var(--white);
+  overflow: hidden;
+}
+
+p.Project-Summary {
+  font-weight: 200;
+  letter-spacing: 0;
+  line-height: normal;
+  font-size: 1rem;
+  padding: 0% 10% 0 10%;
+}
+
 .Header-with-img {
   background-image: url(/public/nyc.jpeg);
   position: relative;
@@ -142,20 +216,6 @@ img.language {
     max-height: 75%;
   }
   max-height: 50%;
-}
-
-.Personal-Project-Container {
-  border: 3px solid red;
-  padding: 0 0 10% 0;
-}
-
-.Personal-project-item {
-  @media (min-width: 1120px) {
-    max-height: 200%;
-  }
-  max-height: 100%;
-  max-width: 75%;
-  /* overflow: scroll; */
 }
 
 .formContainer {

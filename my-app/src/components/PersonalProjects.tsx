@@ -1,14 +1,19 @@
 import { useRef } from "react";
-import { motion } from "framer-motion";
-import { Avatar, Card, Col, Row } from "antd";
-import "../App.css";
-const { Meta } = Card;
+import {
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+  MotionValue,
+  useInView,
+} from "framer-motion";
 
 export interface PersonalProjectDataProps {
   title: string;
   photo: string;
   summary: string;
   gitHub: string;
+  handleGitHubClick?: (github: string) => void;
 }
 
 const personalProjects: ReadonlyArray<PersonalProjectDataProps> = [
@@ -34,39 +39,75 @@ const personalProjects: ReadonlyArray<PersonalProjectDataProps> = [
   },
 ];
 
+const ProjectSlider = ({
+  title,
+  photo,
+  summary,
+  gitHub,
+  handleGitHubClick,
+}: PersonalProjectDataProps) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
+  const transformText = {
+    transform: isInView ? "none" : "translateY(200px)",
+    opacity: isInView ? 1 : 0,
+    transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+  };
+
+  return (
+    <section className="PersonalProject">
+      <div ref={ref}>
+        <img className="personalProject" src={photo} alt={title} />
+      </div>
+      <motion.h2 className="PersonalProject" style={transformText}>
+        {title}
+        <br />
+        <p className="Project-Summary">{summary}</p>
+        <br />
+        <motion.button
+          className="GitHub"
+          whileHover={{
+            scale: 1.2,
+          }}
+          onClick={() => handleGitHubClick && handleGitHubClick(gitHub)}
+        >
+          GitHub
+        </motion.button>
+      </motion.h2>
+    </section>
+  );
+};
+
 const PersonalProjectGrid = () => {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 75,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
   const handleGitHubClick = (github: string) => {
     window.open(github);
   };
 
   return (
-    <>
-      <h1 className="Personal-Projects">Personal Projects</h1>
-      <Row gutter={[16, 16]} style={{ paddingBottom: "10%" }}>
-        {personalProjects.map((project: PersonalProjectDataProps) => (
-          <Col xs={24} md={12} xl={8} span={8} style={{ display: "flex" }}>
-            <Card
-              cover={
-                <img
-                  alt="example"
-                  src={project.photo}
-                  style={{ height: "100%", width: "100%" }}
-                />
-              }
-              title={project.title}
-              hoverable={true}
-              style={{
-                backgroundColor: "rgb(189, 195, 199)",
-                margin: "10px 15% 10px 15%",
-              }}
-              onClick={() => handleGitHubClick(project.gitHub)}
-            >
-              {project.summary}
-            </Card>
-          </Col>
-        ))}
-      </Row>
-    </>
+    <div className="Personal-Project-Container">
+      <div>
+        {personalProjects.map(({ title, photo, summary, gitHub }) => {
+          return (
+            <ProjectSlider
+              title={title}
+              photo={photo}
+              summary={summary}
+              gitHub={gitHub}
+              handleGitHubClick={handleGitHubClick}
+            />
+          );
+        })}
+        <motion.div style={{ scaleX }}></motion.div>
+      </div>
+    </div>
   );
 };
 
