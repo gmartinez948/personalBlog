@@ -26,7 +26,16 @@ const button = {
   },
 };
 
-const NameHeader = ({ scrollToBottom }: any) => {
+const NameHeader = () => {
+  const scrollToBottom = () => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: "auto",
+      /* you can also use 'auto' behaviour
+         in place of 'smooth' */
+    });
+  };
+
   return (
     <div className="Header-with-img">
       <motion.h3
@@ -53,9 +62,12 @@ const NameHeader = ({ scrollToBottom }: any) => {
         <br />
         <motion.button
           className="contact-me"
+          variants={button}
+          initial="hidden"
+          animate="visible"
           whileHover={{
             scale: 1.2,
-            transition: { duration: 1 },
+            transition: { delay: 4, duration: 1 },
           }}
           onClick={() => scrollToBottom()}
         >

@@ -69,7 +69,7 @@ const PersonalProjectGrid = () => {
                 title={project.title}
                 hoverable={true}
                 style={{
-                  backgroundColor: "rgb(104, 195, 163)",
+                  backgroundColor: "rgb(189, 195, 199)",
                 }}
                 onClick={() => handleGitHubClick(project.gitHub)}
               >

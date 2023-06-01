@@ -11,14 +11,9 @@ import { useRef } from "react";
 function App() {
   const contactMeRef = useRef<null | HTMLDivElement>(null);
 
-  // make this scrolling thing work
-  const scrollToBottom = () => {
-    contactMeRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <div className="App">
-      <NameHeader scrollToBottom={scrollToBottom} />
+      <NameHeader />
       <AboutMe />
       <PersonalProjectGrid />
       <ContactMe ref={contactMeRef} />

@@ -60,16 +60,19 @@ html {
 }
 
 h3.intro-text {
+  position: absolute;
   font-family: "Teko", sans-serif;
   font-size: 2rem;
-  padding: 180px 0% 0% 0%;
-  color: red;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  color: black;
   opacity: 1;
 }
 
 h1.AboutMe {
   text-align: center;
-  padding: 0 0 0 0;
 }
 
 h1.Personal-Projects {
@@ -87,7 +90,7 @@ button.contact-me {
   max-width: 50%;
   padding: 2% 2% 2% 2%;
   border-radius: 10%;
-  color: red;
+  color: white;
   font-size: 1rem;
   background-color: black;
 }
@@ -147,10 +150,23 @@ img.language {
 
 form {
   box-sizing: border-box;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   color: white;
   max-width: 60%;
-  margin: 0 2% 20% 20%;
+  margin: 0 2% 10% 20%;
+}
+
+label {
+  padding: 5% 0 0 0;
+}
+
+textarea {
+  padding: 5% 0 5% 0;
+}
+
+input {
+  padding: 3% 0 0 0;
 }
 
 h2.Send-Message {
@@ -160,6 +176,6 @@ h2.Send-Message {
 button.Send-Button {
   max-width: 30%;
   padding: 3% 3% 3% 3%;
-  justify-self: end;
-  background-color: greenyellow;
+  align-self: flex-end;
+  background-color: rgb(189, 195, 199);
 }
