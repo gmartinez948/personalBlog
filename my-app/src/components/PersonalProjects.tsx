@@ -46,8 +46,13 @@ const PersonalProjectGrid = () => {
         {personalProjects.map((project: PersonalProjectDataProps) => (
           <Col xs={24} md={12} xl={8} span={8} style={{ display: "flex" }}>
             <Card
-              // className="Personal-project-item"
-              cover={<img alt="example" src={project.photo} />}
+              cover={
+                <img
+                  alt="example"
+                  src={project.photo}
+                  style={{ height: "100%", width: "100%" }}
+                />
+              }
               title={project.title}
               hoverable={true}
               style={{
