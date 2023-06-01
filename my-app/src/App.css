@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Teko");
 
-@media (min-width: 480px) {
+@media (min-width: 501px) {
   * {
     box-sizing: border-box;
     width: max(90%, 1000px);
@@ -43,10 +43,16 @@
   }
 }
 
-html,
-body {
+html {
+  box-sizing: border-box;
   min-height: 100%;
   min-width: 100%;
+  overflow-x: hidden;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 .App {
@@ -56,7 +62,7 @@ body {
 h3.intro-text {
   font-family: "Teko", sans-serif;
   font-size: 2rem;
-  padding: 70% 0% 0% 0%;
+  padding: 180px 0% 0% 0%;
   color: red;
   opacity: 1;
 }
@@ -77,10 +83,12 @@ p.AboutMe {
 }
 
 button.contact-me {
-  max-height: 10%;
-  max-width: 35%;
-  border-radius: 5%;
+  max-height: 20%;
+  max-width: 50%;
+  padding: 2% 2% 2% 2%;
+  border-radius: 10%;
   color: red;
+  font-size: 1rem;
   background-color: black;
 }
 
@@ -119,20 +127,13 @@ img.language {
   max-height: 50%;
 }
 
-.Personal-project {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  row-gap: 2%;
-  justify-content: space-evenly;
-  justify-items: center;
-  max-height: 100%;
-  max-width: 100%;
-  padding: 0 0 20% 0;
+.Personal-Project-Container {
+  padding: 0 0 10% 0;
 }
 
 .Personal-project-item {
   max-height: 100%;
-  max-width: 100%;
+  max-width: 75%;
   overflow: scroll;
 }
 
@@ -158,6 +159,7 @@ h2.Send-Message {
 
 button.Send-Button {
   max-width: 30%;
+  padding: 3% 3% 3% 3%;
   justify-self: end;
   background-color: greenyellow;
 }

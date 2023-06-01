@@ -1,20 +1,27 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import "../App.css";
-import { AnimatePresence, motion, useInView } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useAnimation,
+  useInView,
+} from "framer-motion";
 
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      x: 0,
-      duration: 2,
-    },
-  },
+const languageTransition = {
+  hidden: { opacity: 0, x: 200 },
+  visible: { opacity: 1, x: 0, transition: { delay: 0.5, duration: 1 } },
 };
 const AboutMe = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false });
+  const isInView = useInView(ref, { once: true });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    }
+  }, [controls, isInView]);
+
   return (
     <div className="AboutMe">
       <img className="AboutMe-img" alt="about me img" src="./me.jpg" />
@@ -35,21 +42,19 @@ const AboutMe = () => {
         Currently, I am searching for a new opportunity. Please reach out to me
         if you have any connections or are looking to hire for an L1 engineer.
       </p>
-      <div
+      <motion.div
         ref={ref}
         className="Language-grid"
-        style={{
-          transform: isInView ? "none" : "translateX(300px)",
-          opacity: isInView ? 1 : 0,
-          transition: "all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-        }}
+        variants={languageTransition}
+        initial="hidden"
+        animate={controls}
       >
         <img className="language" alt="react" src="./react-logo.svg" />
         <img className="language" alt="typescript" src="./typescript.svg" />
         <img className="language" alt="node" src="./nodelogo.svg" />
         <img className="language" alt="ruby" src="./rubylogo.svg" />
         <img className="language" alt="python" src="./python-icon.svg" />
-      </div>
+      </motion.div>
     </div>
   );
 };

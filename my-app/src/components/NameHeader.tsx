@@ -26,7 +26,7 @@ const button = {
   },
 };
 
-const NameHeader = () => {
+const NameHeader = ({ scrollToBottom }: any) => {
   return (
     <div className="Header-with-img">
       <motion.h3
@@ -53,9 +53,11 @@ const NameHeader = () => {
         <br />
         <motion.button
           className="contact-me"
-          variants={button}
-          initial="hidden"
-          animate="visible"
+          whileHover={{
+            scale: 1.2,
+            transition: { duration: 1 },
+          }}
+          onClick={() => scrollToBottom()}
         >
           Contact Me
         </motion.button>
