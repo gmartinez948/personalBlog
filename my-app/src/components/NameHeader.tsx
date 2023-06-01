@@ -36,6 +36,14 @@ const NameHeader = () => {
     });
   };
 
+  const goToGithub = () => {
+    window.open("https://github.com/gmartinez948");
+  };
+
+  const goToLinkedIn = () => {
+    window.open("https://www.linkedin.com/in/guillermo-948-martinez/");
+  };
+
   return (
     <div className="Header-with-img">
       <motion.h3
@@ -76,7 +84,7 @@ const NameHeader = () => {
             variants={button}
             initial="hidden"
             animate="visible"
-            onClick={() => scrollToBottom()}
+            onClick={() => goToLinkedIn()}
             whileHover={buttonHover}
           >
             <LinkedIn />
@@ -86,7 +94,7 @@ const NameHeader = () => {
             variants={button}
             initial="hidden"
             animate="visible"
-            onClick={() => scrollToBottom()}
+            onClick={() => goToGithub()}
             whileHover={buttonHover}
           >
             <GitHub />
