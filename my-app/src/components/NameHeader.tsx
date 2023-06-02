@@ -22,7 +22,13 @@ const button = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { delay: 4.5, duration: 0.5, type: "spring", stiffness: 20 },
+    transition: {
+      delay: 4.5,
+      duration: 0.5,
+      type: "spring",
+      stiffness: 400,
+      damping: 17,
+    },
   },
 };
 
@@ -78,6 +84,7 @@ const NameHeader = () => {
             animate="visible"
             onClick={() => scrollToBottom()}
             whileHover={buttonHover}
+            whileTap={{ scale: 0.9 }}
           >
             Contact Me
           </motion.button>
@@ -88,6 +95,7 @@ const NameHeader = () => {
             animate="visible"
             onClick={() => goToLinkedIn()}
             whileHover={buttonHover}
+            whileTap={{ scale: 0.9 }}
           >
             <LinkedIn />
           </motion.button>
@@ -98,6 +106,7 @@ const NameHeader = () => {
             animate="visible"
             onClick={() => goToGithub()}
             whileHover={buttonHover}
+            whileTap={{ scale: 0.9 }}
           >
             <GitHub />
           </motion.button>

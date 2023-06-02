@@ -50,7 +50,6 @@ h1.Personal-Projects {
     font-size: 2.5rem;
     padding: 10% 0 10% 0;
   }
-  border-top: 8px solid black;
   border-collapse: collapse;
   text-align: center;
   padding: 10% 0 10% 0;
@@ -66,7 +65,7 @@ p.AboutMe {
     height: 100%;
   }
   max-width: 75%;
-  padding: 0 0 0% 0;
+  padding: 0 0 5% 0;
 }
 
 button.contact-me {
@@ -81,6 +80,7 @@ button.contact-me {
   box-shadow: 0px 8px 15px white;
   cursor: pointer;
   outline: none;
+  border: none;
 }
 
 .Contact-Me-Container {
@@ -98,13 +98,6 @@ button.contact-me {
   scroll-margin-inline-end: 0;
 }
 
-/* .Personal-Project-Container::-webkit-scrollbar {
-  height: 0;
-  width: 10px;
-  margin: 20% 0 0% 0;
-  background: green;
-} */
-
 img.personalProject {
   position: absolute;
   top: 0;
@@ -113,21 +106,25 @@ img.personalProject {
   bottom: 0;
   max-width: 100%;
   max-height: 100%;
+  perspective: 50rem;
+  box-shadow: 0px 5px 25px black;
+  align-self: center;
 }
 
 button.GitHub {
-  padding: 2% 2% 2% 2%;
+  padding: 5% 5% 5% 5%;
   margin-left: 10%;
-  border-radius: 15%;
-  background-color: red;
-  box-shadow: 0px 5px 20px grey;
+  border-radius: 50px;
+  background: rgb(195, 228, 8);
   cursor: pointer;
   outline: none;
+  border: none;
 }
 
 h2.PersonalProject {
-  margin: 60% 0 0% 0;
-  color: var(--accent);
+  padding: 0 0% 0 0;
+  margin: 50% 50% 0 0%;
+  color: black;
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: -3px;
@@ -136,12 +133,10 @@ h2.PersonalProject {
 }
 
 section.PersonalProject {
-  height: 100vh;
+  height: 75vh;
   display: flex;
   justify-content: center;
-  align-items: center;
   position: relative;
-  scroll-snap-align: end;
   perspective: 500px;
   scroll-snap-type: y mandatory;
 }
@@ -186,7 +181,7 @@ p.Project-Summary {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5% 0 15% 0;
+  padding: 15% 0 15% 0;
   max-height: 100%;
 }
 
@@ -203,7 +198,7 @@ img.AboutMe-img {
 .Language-grid {
   @media (min-width: 1120px) {
     grid-area: 3 / 2 / 4 / 3;
-    margin: 0 10% 0 20%;
+    margin: 0 10% 0 10%;
   }
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -262,4 +257,5 @@ button.Send-Button {
   box-shadow: 0px 8px 15px grey;
   cursor: pointer;
   outline: none;
+  border: none;
 }

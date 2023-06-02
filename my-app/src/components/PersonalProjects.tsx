@@ -1,12 +1,5 @@
 import { useRef } from "react";
-import {
-  motion,
-  useScroll,
-  useSpring,
-  useTransform,
-  MotionValue,
-  useInView,
-} from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 export interface PersonalProjectDataProps {
   title: string;
@@ -70,6 +63,8 @@ const ProjectSlider = ({
           whileHover={{
             scale: 1.2,
           }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 400, damping: 17 }}
           onClick={() => handleGitHubClick && handleGitHubClick(gitHub)}
         >
           GitHub
@@ -80,34 +75,30 @@ const ProjectSlider = ({
 };
 
 const PersonalProjectGrid = () => {
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 75,
-    damping: 30,
-    restDelta: 0.001,
-  });
-
   const handleGitHubClick = (github: string) => {
     window.open(github);
   };
+  const ref = useRef(null);
 
   return (
-    <div className="Personal-Project-Container">
-      <div>
-        {personalProjects.map(({ title, photo, summary, gitHub }) => {
-          return (
-            <ProjectSlider
-              title={title}
-              photo={photo}
-              summary={summary}
-              gitHub={gitHub}
-              handleGitHubClick={handleGitHubClick}
-            />
-          );
-        })}
-        <motion.div style={{ scaleX }}></motion.div>
+    <>
+      <h1 className="Personal-Projects">Personal Projects</h1>
+      <div className="Personal-Project-Container">
+        <div>
+          {personalProjects.map(({ title, photo, summary, gitHub }) => {
+            return (
+              <ProjectSlider
+                title={title}
+                photo={photo}
+                summary={summary}
+                gitHub={gitHub}
+                handleGitHubClick={handleGitHubClick}
+              />
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
