@@ -36,16 +36,6 @@ h3.intro-text {
   opacity: 1;
 }
 
-h1.AboutMe {
-  text-align: center;
-  @media (min-width: 1120px) {
-    grid-area: 1 / 2 / 2 / 3;
-    font-size: 2.5rem;
-    padding: 10% 0 0 0;
-  }
-  margin-top: 5%;
-}
-
 h1.Personal-Projects {
   @media (min-width: 1120px) {
     font-size: 2.5rem;
@@ -54,19 +44,6 @@ h1.Personal-Projects {
   border-collapse: collapse;
   text-align: center;
   padding: 10% 0 5% 0;
-}
-
-p.AboutMe {
-  @media (min-width: 1120px) {
-    grid-area: 2 / 2 / 3 / 3;
-    max-width: 100%;
-    font-size: 1rem;
-    padding: 0 20% 10% 30%;
-    line-height: 1.5rem;
-    height: 100%;
-  }
-  max-width: 75%;
-  margin: 5% 0 10% 0;
 }
 
 button.contact-me {
@@ -187,9 +164,31 @@ p.Project-Summary {
   }
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
   max-height: 100%;
   margin-top: 10%;
+}
+
+h1.AboutMe {
+  text-align: center;
+  @media (min-width: 1120px) {
+    grid-area: 1 / 2 / 2 / 3;
+    font-size: 2.5rem;
+    padding: 10% 0 0 0;
+  }
+  margin-top: 5%;
+}
+
+p.AboutMe {
+  @media (min-width: 1120px) {
+    grid-area: 2 / 2 / 3 / 3;
+    max-width: 100%;
+    font-size: 1rem;
+    padding: 0 20% 10% 30%;
+    line-height: 1.5rem;
+    height: 100%;
+  }
+  margin: 10%;
 }
 
 img.AboutMe-img {
@@ -198,8 +197,7 @@ img.AboutMe-img {
     grid-area: 1 / 1 / 3 / 2;
     margin: 10% 20% 0 20%;
   }
-  max-width: 50%;
-  border-radius: 10%;
+  margin: 10%;
 }
 
 .Language-grid {
@@ -207,17 +205,18 @@ img.AboutMe-img {
     grid-area: 3 / 2 / 4 / 3;
     margin: 0 10% 0 10%;
   }
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  justify-content: space-evenly;
-  justify-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-basis: auto;
+  justify-content: space-around;
 }
 
 img.language {
   @media (min-width: 750px) {
     max-height: 75%;
   }
-  max-height: 50%;
+  max-height: 15%;
+  max-width: 15%;
 }
 
 .formContainer {
