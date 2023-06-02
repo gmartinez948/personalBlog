@@ -48,11 +48,11 @@ h1.AboutMe {
 h1.Personal-Projects {
   @media (min-width: 1120px) {
     font-size: 2.5rem;
-    padding: 10% 0 10% 0;
+    padding: 10% 0 5% 0;
   }
   border-collapse: collapse;
   text-align: center;
-  padding: 10% 0 10% 0;
+  padding: 10% 0 5% 0;
 }
 
 p.AboutMe {
@@ -97,6 +97,8 @@ button.contact-me {
   scroll-snap-type: y mandatory;
   overflow: scroll;
   scroll-margin-inline-end: 0;
+  margin-bottom: 15%;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
 img.personalProject {
@@ -113,8 +115,7 @@ img.personalProject {
 }
 
 button.GitHub {
-  padding: 5% 5% 5% 5%;
-  margin-left: 10%;
+  padding: 2% 2% 2% 2%;
   border-radius: 50px;
   background: rgb(195, 228, 8);
   cursor: pointer;
@@ -123,8 +124,6 @@ button.GitHub {
 }
 
 h2.PersonalProject {
-  padding: 0 0% 0 0;
-  margin: 50% 50% 0 0%;
   color: black;
   font-size: 2rem;
   font-weight: 700;
@@ -137,9 +136,12 @@ section.PersonalProject {
   height: 90vh;
   display: flex;
   justify-content: center;
+  column-gap: 3%;
   position: relative;
   perspective: 500px;
   scroll-snap-type: y mandatory;
+  margin: 0 0% 0 0%;
+  background-color: rgb(112, 115, 128);
 }
 
 section.PersonalProject > div {
@@ -147,8 +149,10 @@ section.PersonalProject > div {
   height: 50%;
   position: relative;
   max-height: 90vh;
-  margin: 20px;
-  background: var(--white);
+  @media (min-width: 1000px) {
+    margin: 10% 0% 0 20%;
+  }
+  margin: 10% 0% 0 0%;
   overflow: hidden;
 }
 
@@ -157,7 +161,8 @@ p.Project-Summary {
   letter-spacing: 0;
   line-height: normal;
   font-size: 1rem;
-  padding: 0% 10% 0 10%;
+  padding: 0% 10% 0 0%;
+  font-weight: 400;
 }
 
 .Header-with-img {
@@ -216,7 +221,7 @@ img.language {
 
 .formContainer {
   background-color: rgb(27, 27, 27, 27);
-  padding: 10% 0 0 0;
+  padding: 0% 0 0 0;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -228,6 +233,10 @@ form {
   flex-direction: column;
   color: white;
   max-width: 60%;
+  @media (min-width: 1120px) {
+    margin: 0 0% 10% 30%;
+    max-width: 40%;
+  }
   margin: 0 2% 10% 20%;
 }
 
@@ -255,7 +264,6 @@ button.Send-Button {
   align-self: flex-end;
   background-color: rgb(189, 195, 199);
   border-radius: 30px;
-  box-shadow: 0px 8px 15px grey;
   cursor: pointer;
   outline: none;
   border: none;

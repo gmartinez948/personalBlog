@@ -53,23 +53,24 @@ const ProjectSlider = ({
       <div ref={ref}>
         <img className="personalProject" src={photo} alt={title} />
       </div>
-      <motion.h2 className="PersonalProject" style={transformText}>
-        {title}
-        <br />
-        <p className="Project-Summary">{summary}</p>
-        <br />
-        <motion.button
-          className="GitHub"
-          whileHover={{
-            scale: 1.2,
-          }}
-          whileTap={{ scale: 0.9 }}
-          transition={{ type: "spring", stiffness: 400, damping: 17 }}
-          onClick={() => handleGitHubClick && handleGitHubClick(gitHub)}
-        >
-          GitHub
-        </motion.button>
-      </motion.h2>
+      <div>
+        <motion.h2 className="PersonalProject" style={transformText}>
+          {title}
+          <br />
+          <p className="Project-Summary">{summary}</p>
+          <motion.button
+            className="GitHub"
+            whileHover={{
+              scale: 1.2,
+            }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            onClick={() => handleGitHubClick && handleGitHubClick(gitHub)}
+          >
+            GitHub
+          </motion.button>
+        </motion.h2>
+      </div>
     </section>
   );
 };
