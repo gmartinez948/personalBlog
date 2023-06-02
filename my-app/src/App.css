@@ -134,6 +134,10 @@ section.PersonalProject {
   height: 90vh;
   display: flex;
   justify-content: center;
+  @media (min-width: 1000px) {
+    column-gap: 0;
+    padding-right: 5%;
+  }
   column-gap: 3%;
   margin-top: 5%;
   position: relative;
@@ -221,7 +225,6 @@ img.language {
   padding: 0% 0 0 0;
   display: flex;
   flex-direction: column;
-  margin: auto;
 }
 
 form {
@@ -231,10 +234,10 @@ form {
   color: white;
   max-width: 60%;
   @media (min-width: 1120px) {
-    margin: 0 0% 10% 30%;
+    margin: 10% 0% 10% 30%;
     max-width: 40%;
   }
-  margin: 0 2% 10% 20%;
+  margin: 10% 2% 10% 20%;
 }
 
 label {
