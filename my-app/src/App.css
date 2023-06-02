@@ -88,6 +88,7 @@ button.contact-me {
   flex-direction: row;
   justify-content: center;
   column-gap: 10%;
+  margin-top: 10%;
 }
 
 .Personal-Project-Container {
@@ -107,7 +108,7 @@ img.personalProject {
   max-width: 100%;
   max-height: 100%;
   perspective: 50rem;
-  box-shadow: 0px 5px 25px black;
+  box-shadow: 0px 2px 10px black;
   align-self: center;
 }
 
@@ -133,7 +134,7 @@ h2.PersonalProject {
 }
 
 section.PersonalProject {
-  height: 75vh;
+  height: 90vh;
   display: flex;
   justify-content: center;
   position: relative;
