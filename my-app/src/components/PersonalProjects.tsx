@@ -1,6 +1,5 @@
-import { useRef, useState } from "react";
-import { motion, useInView, AnimatePresence } from "framer-motion";
-import { NumberLiteralType } from "typescript";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export interface PersonalProjectDataProps {
   title: string;
@@ -85,15 +84,24 @@ const PersonalProjectGrid = () => {
               alt={personalProjects[index].title}
               key={personalProjects[index] as any}
             ></img>
-            <h2>{personalProjects[index].title}</h2>
+            <h2 style={{ textAlign: "center" }}>
+              {personalProjects[index].title}
+            </h2>
             <p>{personalProjects[index].summary}</p>
+            <div className="Slider-Button-Box">
+              <button className="PrevSlide" onClick={prevSlide}>
+                {"<"}
+              </button>
+              <button className="NextSlide" onClick={nextSlide}>
+                {">"}
+              </button>
+            </div>
             <button
+              className="GitHub"
               onClick={() => handleGitHubClick(personalProjects[index].gitHub)}
             >
               Github
             </button>
-            <button onClick={prevSlide}>{"<"}</button>
-            <button onClick={nextSlide}>{">"}</button>
           </motion.div>
         </AnimatePresence>
       </div>
