@@ -34,11 +34,26 @@ const personalProjects: ReadonlyArray<PersonalProjectDataProps> = [
 
 const variants = {
   hidden: (direction: number) => {
-    return { x: direction > 0 ? 200 : -200, opacity: 0 };
+    return { x: direction > 0 ? 200 : -200, opacity: 0, scale: 0.5 };
   },
-  visible: { x: 0, opacity: 1 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    scale: 1,
+    transition: {
+      x: { type: "ease-in", stiffness: 50, damping: 20 },
+      opacity: { duration: 0.2 },
+    },
+  },
   exit: (direction: number) => {
-    return { x: direction > 0 ? -200 : 200, opacity: 0 };
+    return {
+      x: direction > 0 ? -200 : 200,
+      opacity: 0,
+      transition: {
+        x: { type: "ease-in", stiffness: 50, damping: 20 },
+        opacity: { duration: 0.2 },
+      },
+    };
   },
 };
 
@@ -74,15 +89,15 @@ const PersonalProjectGrid = () => {
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
             variants={variants}
+            initial="hidden"
             animate="visible"
-            initial=" hidden"
             exit="exit"
+            key={personalProjects[index].photo as any}
           >
             <img
               className="Personal-Project-Image"
               src={personalProjects[index].photo}
               alt={personalProjects[index].title}
-              key={personalProjects[index] as any}
             ></img>
             <h2 style={{ textAlign: "center" }}>
               {personalProjects[index].title}

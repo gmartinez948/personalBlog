@@ -205,7 +205,6 @@ button.PrevSlide {
   border: none;
   border-radius: 50px;
   opacity: 0.5;
-  z-index: 4;
 }
 
 button.NextSlide {
@@ -214,7 +213,6 @@ button.NextSlide {
   border-radius: 50px;
   padding: 5%;
   opacity: 0.5;
-  z-index: 4;
 }
 
 form {
