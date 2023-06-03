@@ -1,5 +1,6 @@
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useRef, useState } from "react";
+import { motion, useInView, AnimatePresence } from "framer-motion";
+import { NumberLiteralType } from "typescript";
 
 export interface PersonalProjectDataProps {
   title: string;
@@ -32,74 +33,71 @@ const personalProjects: ReadonlyArray<PersonalProjectDataProps> = [
   },
 ];
 
-const ProjectSlider = ({
-  title,
-  photo,
-  summary,
-  gitHub,
-  handleGitHubClick,
-}: PersonalProjectDataProps) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref);
-
-  const transformText = {
-    transform: isInView ? "none" : "translateY(300px)",
-    opacity: isInView ? 1 : 0,
-    transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-  };
-
-  return (
-    <section className="PersonalProject">
-      <div ref={ref}>
-        <img className="personalProject" src={photo} alt={title} />
-      </div>
-      <div>
-        <motion.h2 className="PersonalProject" style={transformText}>
-          {title}
-          <br />
-          <p className="Project-Summary">{summary}</p>
-          <motion.button
-            className="GitHub"
-            whileHover={{
-              scale: 1.2,
-            }}
-            whileTap={{ scale: 0.9 }}
-            transition={{ type: "spring", stiffness: 400, damping: 17 }}
-            onClick={() => handleGitHubClick && handleGitHubClick(gitHub)}
-          >
-            GitHub
-          </motion.button>
-        </motion.h2>
-      </div>
-    </section>
-  );
+const variants = {
+  hidden: (direction: number) => {
+    return { x: direction > 0 ? 200 : -200, opacity: 0 };
+  },
+  visible: { x: 0, opacity: 1 },
+  exit: (direction: number) => {
+    return { x: direction > 0 ? -200 : 200, opacity: 0 };
+  },
 };
 
 const PersonalProjectGrid = () => {
+  const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
   const handleGitHubClick = (github: string) => {
     window.open(github);
   };
-  const ref = useRef(null);
+
+  const nextSlide = () => {
+    setDirection(1);
+    if (index === personalProjects.length - 1) {
+      setIndex(0);
+      return;
+    }
+    setIndex(index + 1);
+  };
+
+  const prevSlide = () => {
+    setDirection(-1);
+    if (index === 0) {
+      setIndex(personalProjects.length - 1);
+      return;
+    }
+    setIndex(index - 1);
+  };
 
   return (
-    <>
-      <h1 className="Personal-Projects">Personal Projects</h1>
-      <div className="Personal-Project-Container">
-        <div>
-          {personalProjects.map(({ title, photo, summary, gitHub }) => {
-            return (
-              <ProjectSlider
-                title={title}
-                photo={photo}
-                summary={summary}
-                gitHub={gitHub}
-                handleGitHubClick={handleGitHubClick}
-              />
-            );
-          })}
-        </div>
+    <div className="Personal-Project-Container">
+      <h1>Personal Projects</h1>
+      <div className="Personal-Project-Box">
+        <AnimatePresence initial={false} custom={direction}>
+          <motion.div
+            variants={variants}
+            animate="visible"
+            initial=" hidden"
+            exit="exit"
+          >
+            <img
+              className="Personal-Project-Image"
+              src={personalProjects[index].photo}
+              alt={personalProjects[index].title}
+              key={personalProjects[index] as any}
+            ></img>
+            <h2>{personalProjects[index].title}</h2>
+            <p>{personalProjects[index].summary}</p>
+            <button
+              onClick={() => handleGitHubClick(personalProjects[index].gitHub)}
+            >
+              Github
+            </button>
+            <button onClick={prevSlide}>{"<"}</button>
+            <button onClick={nextSlide}>{">"}</button>
+          </motion.div>
+        </AnimatePresence>
       </div>
-    </>
+    </div>
   );
 };
 

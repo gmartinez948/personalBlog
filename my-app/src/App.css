@@ -37,13 +37,9 @@ h3.intro-text {
 }
 
 h1.Personal-Projects {
-  @media (min-width: 1120px) {
-    font-size: 2.5rem;
-    padding: 10% 0 5% 0;
-  }
-  border-collapse: collapse;
+  font-size: 5vh;
   text-align: center;
-  padding: 10% 0 5% 0;
+  margin: 10% auto;
 }
 
 button.contact-me {
@@ -68,28 +64,6 @@ button.contact-me {
   margin-top: 10%;
 }
 
-.Personal-Project-Container {
-  box-sizing: border-box;
-  height: 80vh;
-  scroll-snap-type: y mandatory;
-  overflow: scroll;
-  scroll-margin-inline-end: 0;
-  margin-bottom: 15%;
-}
-
-img.personalProject {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  max-width: 100%;
-  max-height: 100%;
-  perspective: 50rem;
-  box-shadow: 0px 2px 10px black;
-  align-self: center;
-}
-
 button.GitHub {
   padding: 2% 2% 2% 2%;
   border-radius: 50px;
@@ -97,50 +71,6 @@ button.GitHub {
   cursor: pointer;
   outline: none;
   border: none;
-}
-
-h2.PersonalProject {
-  color: black;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: -3px;
-  position: absolute;
-}
-
-section.PersonalProject {
-  height: 90vh;
-  display: flex;
-  justify-content: center;
-  @media (min-width: 1000px) {
-    column-gap: 0;
-    padding-right: 5%;
-  }
-  column-gap: 3%;
-  margin-top: 5%;
-  position: relative;
-  perspective: 500px;
-  scroll-snap-type: y mandatory;
-}
-
-section.PersonalProject > div {
-  width: 50%;
-  height: 50%;
-  position: relative;
-  max-height: 90vh;
-  @media (min-width: 1000px) {
-    margin: 10% 0% 0 20%;
-  }
-  margin: 10% 0% 20% 0%;
-  overflow: hidden;
-}
-
-p.Project-Summary {
-  font-weight: 200;
-  letter-spacing: 0;
-  line-height: normal;
-  font-size: 1rem;
-  padding: 0% 0% 0 0%;
-  font-weight: 400;
 }
 
 .Header-with-img {
@@ -225,6 +155,30 @@ img.language {
   padding: 0% 0 0 0;
   display: flex;
   flex-direction: column;
+}
+
+.Personal-Project-Container {
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1.Personal-Project-Container {
+  text-align: center;
+  justify-self: center;
+}
+
+.Personal-Project-Box {
+  margin: 10%;
+  max-height: auto;
+}
+
+img.Personal-Project-Image {
+  max-height: 100%;
+  max-width: 100%;
 }
 
 form {
