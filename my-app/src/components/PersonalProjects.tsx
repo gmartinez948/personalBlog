@@ -84,7 +84,7 @@ const PersonalProjectGrid = () => {
 
   return (
     <div className="Personal-Project-Container">
-      <h1>Personal Projects</h1>
+      <h1 className="Personal-Projects-Header">Personal Projects</h1>
       <AnimatePresence initial={false} custom={direction} mode="wait">
         <motion.div
           className="Project-Image_Box"
@@ -101,8 +101,12 @@ const PersonalProjectGrid = () => {
               alt={personalProjects[index].title}
             ></img>
           </div>
-          <h2>{personalProjects[index].title}</h2>
-          <p>{personalProjects[index].summary}</p>
+          <h2 style={{ fontStyle: "italic" }}>
+            {personalProjects[index].title}
+          </h2>
+          <p style={{ fontStyle: "italic" }}>
+            {personalProjects[index].summary}
+          </p>
           <button
             className="GitHub"
             onClick={() => handleGitHubClick(personalProjects[index].gitHub)}

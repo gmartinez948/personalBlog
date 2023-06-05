@@ -25,7 +25,6 @@ const AboutMe = () => {
   return (
     <div className="AboutMe">
       <img className="AboutMe-img" alt="about me img" src="./me.jpg" />
-      <h1 className="AboutMe">About Me</h1>
       <p className="AboutMe">
         I am a full stack software engineer with one year of experience working
         with Ruby on Rails, Typescript/Javascript, React, and GraphQL. During my
