@@ -85,26 +85,24 @@ const PersonalProjectGrid = () => {
   return (
     <div className="Personal-Project-Container">
       <h1>Personal Projects</h1>
-      <AnimatePresence initial={false} custom={direction}>
+      <AnimatePresence initial={false} custom={direction} mode="wait">
         <motion.div
-          className="Personal-Project-Box"
+          className="Project-Image_Box"
           variants={variants}
           initial="hidden"
           animate="visible"
           exit="exit"
           key={personalProjects[index].photo as any}
         >
-          <img
-            className="Personal-Project-Image"
-            src={personalProjects[index].photo}
-            alt={personalProjects[index].title}
-          ></img>
-          <h2 className="Personal-Project-Box">
-            {personalProjects[index].title}
-          </h2>
-          <p className="Personal-Project-Box">
-            {personalProjects[index].summary}
-          </p>
+          <div style={{ minHeight: "0" }}>
+            <img
+              className="Personal-Project-Image"
+              src={personalProjects[index].photo}
+              alt={personalProjects[index].title}
+            ></img>
+          </div>
+          <h2>{personalProjects[index].title}</h2>
+          <p>{personalProjects[index].summary}</p>
           <button
             className="GitHub"
             onClick={() => handleGitHubClick(personalProjects[index].gitHub)}
@@ -113,14 +111,12 @@ const PersonalProjectGrid = () => {
           </button>
         </motion.div>
       </AnimatePresence>
-      <div className="Slider-Button-Box">
-        <button className="PrevSlide" onClick={prevSlide}>
-          {"<"}
-        </button>
-        <button className="NextSlide" onClick={nextSlide}>
-          {">"}
-        </button>
-      </div>
+      <motion.button className="PrevSlide" onClick={prevSlide}>
+        {"<"}
+      </motion.button>
+      <button className="NextSlide" onClick={nextSlide}>
+        {">"}
+      </button>
     </div>
   );
 };

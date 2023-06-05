@@ -8,7 +8,7 @@ const sentence = {
     opacity: 1,
     transition: {
       delay: 0.5,
-      staggerChildren: 0.08,
+      staggerChildren: 0.05,
     },
   },
 };
@@ -23,7 +23,7 @@ const button = {
   visible: {
     opacity: 1,
     transition: {
-      delay: 4.5,
+      delay: 2.9,
       duration: 0.5,
       type: "spring",
       stiffness: 400,
