@@ -85,40 +85,41 @@ const PersonalProjectGrid = () => {
   return (
     <div className="Personal-Project-Container">
       <h1>Personal Projects</h1>
-      <div className="Personal-Project-Box">
-        <AnimatePresence initial={false} custom={direction}>
-          <motion.div
-            variants={variants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            key={personalProjects[index].photo as any}
+      <AnimatePresence initial={false} custom={direction}>
+        <motion.div
+          className="Personal-Project-Box"
+          variants={variants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          key={personalProjects[index].photo as any}
+        >
+          <img
+            className="Personal-Project-Image"
+            src={personalProjects[index].photo}
+            alt={personalProjects[index].title}
+          ></img>
+          <h2 className="Personal-Project-Box">
+            {personalProjects[index].title}
+          </h2>
+          <p className="Personal-Project-Box">
+            {personalProjects[index].summary}
+          </p>
+          <button
+            className="GitHub"
+            onClick={() => handleGitHubClick(personalProjects[index].gitHub)}
           >
-            <img
-              className="Personal-Project-Image"
-              src={personalProjects[index].photo}
-              alt={personalProjects[index].title}
-            ></img>
-            <h2 style={{ textAlign: "center" }}>
-              {personalProjects[index].title}
-            </h2>
-            <p>{personalProjects[index].summary}</p>
-            <div className="Slider-Button-Box">
-              <button className="PrevSlide" onClick={prevSlide}>
-                {"<"}
-              </button>
-              <button className="NextSlide" onClick={nextSlide}>
-                {">"}
-              </button>
-            </div>
-            <button
-              className="GitHub"
-              onClick={() => handleGitHubClick(personalProjects[index].gitHub)}
-            >
-              Github
-            </button>
-          </motion.div>
-        </AnimatePresence>
+            Github
+          </button>
+        </motion.div>
+      </AnimatePresence>
+      <div className="Slider-Button-Box">
+        <button className="PrevSlide" onClick={prevSlide}>
+          {"<"}
+        </button>
+        <button className="NextSlide" onClick={nextSlide}>
+          {">"}
+        </button>
       </div>
     </div>
   );
